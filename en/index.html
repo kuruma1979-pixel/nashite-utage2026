@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autumn Utage 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Archivo:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --bg-soft: #F3F7F8;
+    --bg-dark: #0A0E10;
+    --text: #333333;
+    --heading: #0B0F10;
+    --accent: #377590;
+    --accent-ink: #FFFFFF;
+    --muted: #537584;
+    --border: #E7ECED;
+    --card-bg: #FFFFFF;
+    --header-bg: rgba(255,255,255,0.92);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: "Archivo", "Noto Sans JP", sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  h1, h2, h3 { font-family: "Archivo", "Noto Sans JP", sans-serif; font-weight: 900; color: var(--heading); margin: 0; text-wrap: balance; }
+  .num { font-family: "Archivo", sans-serif; font-weight: 800; }
+  .cta { display: inline-block; }
+  .cta:hover { opacity: 0.88; }
+  img { max-width: 100%; }
+
+  .nav-toggle { display: none; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; background: none; border: none; color: var(--heading); cursor: pointer; flex-shrink: 0; }
+  .site-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 20px; padding: 0 clamp(20px, 5vw, 64px) 12px; font-size: 13px; font-weight: 700; color: var(--muted); }
+
+  .lang-link { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--card-bg); color: var(--heading); font-family: "Archivo", sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.02em; flex-shrink: 0; }
+  .lang-link:hover { border-color: var(--accent); color: var(--accent); }
+
+  .mobile-cta-bar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; justify-content: center; padding: 10px 20px calc(10px + env(safe-area-inset-bottom)); background: var(--header-bg); backdrop-filter: blur(6px); border-top: 1px solid var(--border); }
+  body { padding-bottom: 68px; }
+
+  @media (max-width: 640px) {
+    .nav-toggle { display: inline-flex; }
+    .site-nav { display: none; flex-direction: column; align-items: flex-start; gap: 14px; padding: 4px clamp(20px, 5vw, 64px) 22px; }
+    .site-nav.open { display: flex; }
+    .header-cta { display: none; }
+    .mobile-cta-bar a { width: 100%; text-align: center; }
+  }
+
+  .marquee-viewport { width: 100%; overflow-x: auto; overflow-y: hidden; cursor: grab; scrollbar-width: none; -ms-overflow-style: none; }
+  .marquee-viewport::-webkit-scrollbar { display: none; }
+  .marquee-viewport.dragging { cursor: grabbing; scroll-snap-type: none; }
+  .marquee-viewport.dragging * { user-select: none; }
+
+  .gallery-track { display: flex; align-items: center; gap: 16px; width: max-content; }
+  .gallery-track img { height: 200px; width: auto; flex-shrink: 0; border-radius: 12px; display: block; cursor: zoom-in; -webkit-user-drag: none; }
+
+  .speakers-track { display: flex; align-items: flex-start; gap: 24px; width: max-content; }
+  .speakers-card { width: 280px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px; }
+  .speakers-card img { -webkit-user-drag: none; }
+
+  .lightbox { position: fixed; inset: 0; z-index: 50; display: none; align-items: center; justify-content: center; background: rgba(5,7,8,0.92); padding: 32px; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .lightbox-close { position: fixed; top: 18px; right: 18px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.14); border: none; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+  .lightbox-close:hover { background: rgba(255,255,255,0.26); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+
+<div style="width: 100%; max-width: 100%; overflow-x: hidden;">
+
+  <!-- header -->
+  <div style="position: sticky; top: 0; z-index: 10; background: var(--header-bg); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); display: flex; flex-direction: column;">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px clamp(20px, 5vw, 64px) 10px;">
+      <img src="../assets/logo.webp" alt="?FUK. NASHITE FUKUOKA" style="height: 46px; width: auto; display: block;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="https://www.vida-academy.jp/p/utage2026" target="_blank" rel="noopener" class="cta header-cta" style="background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 14px; padding: 10px 20px; border-radius: 999px; white-space: nowrap;">Join Now</a>
+        <a href="../" class="lang-link">日本語</a>
+        <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <svg id="nav-toggle-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+        </button>
+      </div>
+    </div>
+    <nav id="site-nav" class="site-nav">
+      <a href="#about">About the Event</a>
+      <a href="#gallery">Our Story in Photos</a>
+      <a href="#people">Who You'll Meet</a>
+      <a href="#highlights">3 Highlights</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#details">Event Details</a>
+    </nav>
+  </div>
+
+  <!-- mobile fixed CTA bar -->
+  <div class="mobile-cta-bar">
+    <a href="https://www.vida-academy.jp/p/utage2026" target="_blank" rel="noopener" class="cta" style="background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 15px; padding: 13px 20px; border-radius: 999px;">Join Now →</a>
+  </div>
+
+  <!-- hero / about -->
+  <div id="about" style="background: var(--bg-soft); padding: clamp(24px, 4vw, 40px) clamp(20px, 5vw, 64px) clamp(48px, 8vw, 96px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px; scroll-margin-top: 110px;">
+    <img src="../assets/keyvisual.jpg" alt="Nashite Fukuoka Autumn Utage" style="width: 100%; max-width: 760px; height: auto; border-radius: 20px; box-shadow: 0 20px 48px rgba(0,0,0,0.16);">
+    <h1 style="font-size: clamp(28px, 5vw, 44px); line-height: 1.4;">Nashite Fukuoka — Autumn Utage 2026</h1>
+    <p style="max-width: 560px; font-size: clamp(15px, 2vw, 17px); line-height: 1.9; margin: 0;">A night where newcomers and longtime friends reconnect.</p>
+    <a href="https://www.vida-academy.jp/p/utage2026" target="_blank" rel="noopener" class="cta" style="background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 17px; padding: 16px 40px; border-radius: 999px;">Join Now →</a>
+    <div style="font-size: 14px; color: var(--muted);">📍 Urbang Table (next to Mina Tenjin / Fukuoka Central Post Office)&nbsp;/&nbsp; ¥4,500 per person</div>
+  </div>
+
+  <div style="padding: clamp(56px, 9vw, 104px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center;">
+    <div style="max-width: 680px; display: flex; flex-direction: column; gap: 24px;">
+      <h2 style="font-size: clamp(24px, 3.4vw, 32px); text-align: center;">What Is Nashite Fukuoka's Autumn Utage?</h2>
+      <p style="font-size: clamp(15px, 2vw, 17px); line-height: 2; margin: 0;">
+        Our workshops have introduced us to so many fascinating people.<br><br>
+        But each session draws a different crowd — many of you still haven't met each other.<br><br>
+        The Autumn Utage is a day to make that connection happen.
+      </p>
+      <div style="border-left: 4px solid var(--accent); padding: 4px 0 4px 24px; font-size: clamp(16px, 2.2vw, 19px); font-weight: 700; line-height: 1.8; color: var(--heading);">
+        This isn't a business networking event. Work, hobbies, play, everyday life — it's all welcome here. A place for people to slow down and really meet each other.
+      </div>
+      <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; display: block; background: #000000;">
+        <source src="../assets/highlight.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- photo gallery -->
+  <div id="gallery" style="background: var(--bg-dark); padding: clamp(40px, 7vw, 72px) 0; display: flex; flex-direction: column; gap: 32px; overflow: hidden; scroll-margin-top: 110px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 0 20px;">
+      <h2 style="color: #FFFFFF; font-size: clamp(20px, 3vw, 26px); text-align: center;">Our Story in Photos</h2>
+      <p style="margin: 0; color: rgba(255,255,255,0.72); font-size: 13px; text-align: center;">We've hosted 8+ events and counting.</p>
+    </div>
+    <div class="marquee-viewport" data-marquee data-dir="right" data-speed="38">
+      <div class="gallery-track right">
+        <img src="../assets/gallery-01.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-02.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-03.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-04.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-05.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-06.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-07.png" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-01.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-02.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-03.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-04.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-05.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-06.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-07.png" alt="Nashite Fukuoka event photo">
+      </div>
+    </div>
+    <div class="marquee-viewport" data-marquee data-dir="left" data-speed="34">
+      <div class="gallery-track">
+        <img src="../assets/gallery-08.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-09.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-10.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-11.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-12.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-08.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-09.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-10.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-11.jpg" alt="Nashite Fukuoka event photo">
+        <img src="../assets/gallery-12.jpg" alt="Nashite Fukuoka event photo">
+      </div>
+    </div>
+  </div>
+
+  <!-- who you'll meet -->
+  <div id="people" style="background: var(--bg-soft); padding: clamp(56px, 9vw, 104px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; scroll-margin-top: 110px;">
+    <div style="max-width: 880px; width: 100%; display: flex; flex-direction: column; gap: 36px; align-items: center;">
+      <h2 style="font-size: clamp(24px, 3.4vw, 32px); text-align: center;">The People You'll Meet</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+        <span style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 700;">People based overseas</span>
+        <span style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 700;">Digital nomads</span>
+        <span style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 700;">Freelancers</span>
+        <span style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 700;">Business owners</span>
+        <span style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 700;">Researchers</span>
+        <span style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 700;">Creatives</span>
+        <span style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 700;">Fukuoka locals</span>
+      </div>
+      <p style="max-width: 600px; text-align: center; font-size: 15px; line-height: 1.9; margin: 0;">People you'd rarely cross paths with in everyday life all come together at this Utage.<br>Those encounters can spark new perspectives — and new challenges…</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; width: 100%;">
+        <blockquote style="flex: 1 1 240px; min-width: 0; margin: 0; background: var(--card-bg); border-radius: 16px; padding: 24px; display: flex; align-items: flex-start; gap: 12px;">
+          <span style="width: 36px; height: 36px; border-radius: 50%; background: rgba(95,163,194,0.16); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"></circle><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          </span>
+          <span style="font-size: 15px; line-height: 1.8; color: var(--heading); font-weight: 700;">“The workshops gave me<br>friends who really get me.”</span>
+        </blockquote>
+        <blockquote style="flex: 1 1 240px; min-width: 0; margin: 0; background: var(--card-bg); border-radius: 16px; padding: 24px; display: flex; align-items: flex-start; gap: 12px;">
+          <span style="width: 36px; height: 36px; border-radius: 50%; background: rgba(95,163,194,0.16); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"></circle><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          </span>
+          <span style="font-size: 15px; line-height: 1.8; color: var(--heading); font-weight: 700;">“My perspective shifted a little,<br>and I felt ready for a new challenge.”</span>
+        </blockquote>
+        <blockquote style="flex: 1 1 240px; min-width: 0; margin: 0; background: var(--card-bg); border-radius: 16px; padding: 24px; display: flex; align-items: flex-start; gap: 12px;">
+          <span style="width: 36px; height: 36px; border-radius: 50%; background: rgba(95,163,194,0.16); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"></circle><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          </span>
+          <span style="font-size: 15px; line-height: 1.8; color: var(--heading); font-weight: 700;">“It sparked the start<br>of something new.”</span>
+        </blockquote>
+      </div>
+      <div style="font-size: 12px; color: var(--muted);">— Voices from past participants</div>
+    </div>
+  </div>
+
+  <!-- why it's okay to come alone -->
+  <div id="assurance" style="padding: clamp(56px, 9vw, 104px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; scroll-margin-top: 110px;">
+    <div style="max-width: 680px; display: flex; flex-direction: column; gap: 24px;">
+      <h2 style="font-size: clamp(24px, 3.4vw, 32px); text-align: center;">Why It's Okay to Come Alone</h2>
+      <p style="font-size: clamp(15px, 2vw, 17px); line-height: 2; margin: 0; text-align: center;">“A room full of strangers feels a little daunting…”<br>If that's you, here's something worth knowing.</p>
+      <div style="background: var(--bg-soft); border-radius: 20px; padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; gap: 16px;">
+        <p style="margin: 0; font-size: 16px; font-weight: 700; color: var(--heading);">On the day, our core team plays matchmaker and works the room.</p>
+        <div style="display: flex; gap: 12px;">
+          <img src="../assets/core-01.webp" alt="Core team member" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; display: block;">
+          <img src="../assets/core-02.webp" alt="Core team member" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; display: block;">
+          <img src="../assets/core-03.webp" alt="Core team member" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; display: block;">
+        </div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.9;">“Oh, you're into ___? There's someone over there who loves that too.”<br>“If that's your thing, you have to talk to them — it'll be great.”</p>
+        <p style="margin: 0; font-size: 16px; font-weight: 700; color: var(--accent);">We never let anyone stand alone. That's the Nashite Fukuoka way.</p>
+      </div>
+      <p style="font-size: 15px; line-height: 1.9; margin: 0; text-align: center;">Even the name tags have a little trick: alongside your name, you'll add what you love, what you're into right now, or what's on your mind. You'll probably never run out of conversation starters.</p>
+    </div>
+  </div>
+
+  <!-- 3 highlights -->
+  <div id="highlights" style="background: var(--bg-soft); padding: clamp(56px, 9vw, 104px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; scroll-margin-top: 110px;">
+    <div style="max-width: 960px; width: 100%; display: flex; flex-direction: column; gap: 40px; align-items: center;">
+      <h2 style="font-size: clamp(24px, 3.4vw, 32px); text-align: center;">3 Highlights of the Day</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; width: 100%;">
+
+        <div style="flex: 1 1 260px; min-width: 0; background: var(--card-bg); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;">
+          <img src="../assets/highlight-01.jpg" alt="Mic Pitch" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
+          <div style="padding: 24px 28px 32px; display: flex; flex-direction: column; gap: 14px;">
+            <div class="num" style="font-size: 32px; color: var(--accent);">01</div>
+            <h3 style="font-size: 19px;">Mic Pitch</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.85;">Three minutes, one mic. Introduce yourself, share what you're working on, or what you really want to do — it's your time to speak freely. Volunteers welcome.</p>
+          </div>
+        </div>
+
+        <div style="flex: 1 1 260px; min-width: 0; background: var(--card-bg); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;">
+          <img src="../assets/highlight-02.jpg" alt="Multicultural Feast" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
+          <div style="padding: 24px 28px 32px; display: flex; flex-direction: column; gap: 14px;">
+            <div class="num" style="font-size: 32px; color: var(--accent);">02</div>
+            <h3 style="font-size: 19px;">Multicultural Feast</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.85;">Members who've traveled the world as nomads — and love to cook — recreate dishes from different countries. You might find dishes you won't find anywhere else in Fukuoka.</p>
+          </div>
+        </div>
+
+        <div style="flex: 1 1 260px; min-width: 0; background: var(--card-bg); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;">
+          <img src="../assets/highlight-03.jpg" alt="Icebreakers for First-Timers" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
+          <div style="padding: 24px 28px 32px; display: flex; flex-direction: column; gap: 14px;">
+            <div class="num" style="font-size: 32px; color: var(--accent);">03</div>
+            <h3 style="font-size: 19px;">Icebreakers for First-Timers</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.85;">Mini games and quizzes help strangers warm up naturally. We also mix up the groups so people don't just stick with who they already know.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- speakers -->
+  <div id="speakers" style="padding: clamp(56px, 9vw, 104px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; scroll-margin-top: 110px;">
+    <div style="max-width: 960px; width: 100%; display: flex; flex-direction: column; gap: 40px; align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+        <h2 style="font-size: clamp(24px, 3.4vw, 32px); text-align: center;">Mic Pitch Speakers</h2>
+        <p style="margin: 0; font-size: 15px; line-height: 1.9; text-align: center; max-width: 520px;">Meet the speakers who'll share their honest stories — 3 minutes each.</p>
+      </div>
+      <div class="marquee-viewport" data-marquee data-dir="left" data-speed="30">
+        <div class="speakers-track">
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="../assets/speaker-higuchi.jpg" alt="Takuya Higuchi" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">Takuya Higuchi</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">A therapist-meets-trainer's take on the future of health &amp; fitness in Japan</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="../assets/speaker-ryuji.jpg" alt="Ryuji" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">Ryuji</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">AI × Anatomy-Based Pilates</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="../assets/speaker-bambi.jpg" alt="BAMBI" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">BAMBI</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">A video director who's spent 10 years telling Fukuoka's story: “People aren't moved by scenery — they're moved by stories.”</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="../assets/speaker-kuruma.jpg" alt="Kuruma" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">Kuruma</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">A marketer who has seen Japan's appeal from the outside, on attracting inbound travelers from overseas</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 48px; color: var(--accent); opacity: 0.5;">?</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="font-weight: 700; font-size: 16px; color: var(--heading);">???</div>
+              <div style="font-size: 13px; line-height: 1.7;">Coming soon — stay tuned!</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 48px; color: var(--accent); opacity: 0.5;">?</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="font-weight: 700; font-size: 16px; color: var(--heading);">???</div>
+              <div style="font-size: 13px; line-height: 1.7;">Coming soon — stay tuned!</div>
+            </div>
+          </div>
+
+          <!-- duplicate set for seamless loop -->
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="../assets/speaker-higuchi.jpg" alt="Takuya Higuchi" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">Takuya Higuchi</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">A therapist-meets-trainer's take on the future of health &amp; fitness in Japan</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="../assets/speaker-ryuji.jpg" alt="Ryuji" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">Ryuji</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">AI × Anatomy-Based Pilates</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="../assets/speaker-bambi.jpg" alt="BAMBI" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">BAMBI</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">A video director who's spent 10 years telling Fukuoka's story: “People aren't moved by scenery — they're moved by stories.”</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="../assets/speaker-kuruma.jpg" alt="Kuruma" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">Kuruma</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">A marketer who has seen Japan's appeal from the outside, on attracting inbound travelers from overseas</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 48px; color: var(--accent); opacity: 0.5;">?</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="font-weight: 700; font-size: 16px; color: var(--heading);">???</div>
+              <div style="font-size: 13px; line-height: 1.7;">Coming soon — stay tuned!</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 48px; color: var(--accent); opacity: 0.5;">?</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="font-weight: 700; font-size: 16px; color: var(--heading);">???</div>
+              <div style="font-size: 13px; line-height: 1.7;">Coming soon — stay tuned!</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- event details -->
+  <div id="details" style="padding: clamp(56px, 9vw, 104px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; scroll-margin-top: 110px;">
+    <div style="max-width: 680px; width: 100%; display: flex; flex-direction: column; gap: 32px;">
+      <h2 style="font-size: clamp(24px, 3.4vw, 32px); text-align: center;">Event Details</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border);">
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 20px 0; border-bottom: 1px solid var(--border);">
+          <div style="width: 96px; flex-shrink: 0; font-weight: 700; color: var(--muted); font-size: 14px;">Date &amp; Time</div>
+          <div style="flex: 1 1 260px; font-size: 15px; color: var(--heading);">Sat, Oct 17, 2026 · 17:00–20:00</div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 20px 0; border-bottom: 1px solid var(--border);">
+          <div style="width: 96px; flex-shrink: 0; font-weight: 700; color: var(--muted); font-size: 14px;">Venue</div>
+          <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="font-size: 15px; color: var(--heading);">Urbang Table (next to Mina Tenjin / Fukuoka Central Post Office)<br><a href="https://maps.app.goo.gl/fUZd4rp75DmWXwo6A" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700; font-size: 14px;">View on map →</a></div>
+            <a href="https://maps.app.goo.gl/fUZd4rp75DmWXwo6A" target="_blank" rel="noopener" style="display: block; border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
+              <img src="../assets/venue-map.png" alt="Urbang Table map" style="width: 100%; height: auto; display: block;">
+            </a>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 20px 0; border-bottom: 1px solid var(--border);">
+          <div style="width: 96px; flex-shrink: 0; font-weight: 700; color: var(--muted); font-size: 14px;">Price</div>
+          <div style="flex: 1 1 260px; font-size: 15px; color: var(--heading);">¥4,500 (includes multicultural food + 2 drinks; alcohol available)</div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 20px 0; border-bottom: 1px solid var(--border);">
+          <div style="width: 96px; flex-shrink: 0; font-weight: 700; color: var(--muted); font-size: 14px;">English</div>
+          <div style="flex: 1 1 260px; font-size: 15px; color: var(--heading); line-height: 1.8;">English speakers are very welcome. Real-time AI translation via QR code and bilingual Japanese–English staff support will be available.</div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 20px 0; border-bottom: 1px solid var(--border);">
+          <div style="width: 96px; flex-shrink: 0; font-weight: 700; color: var(--muted); font-size: 14px;">Organizer</div>
+          <div style="flex: 1 1 260px; font-size: 15px; color: var(--heading); line-height: 1.8;">
+            Nashite Fukuoka<br>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 10px; font-size: 13px; font-weight: 700;">
+              <a href="https://nashitefukuoka.jp/" target="_blank" rel="noopener" style="color: var(--accent);">Official Site →</a>
+              <a href="https://www.instagram.com/nashite_fukuoka/" target="_blank" rel="noopener" style="color: var(--accent);">Instagram →</a>
+              <a href="https://www.threads.com/@nashite_fukuoka" target="_blank" rel="noopener" style="color: var(--accent);">Threads →</a>
+              <a href="https://www.youtube.com/@NASHITEFUKUOKA" target="_blank" rel="noopener" style="color: var(--accent);">YouTube →</a>
+              <a href="https://note.com/nashite_fukuoka" target="_blank" rel="noopener" style="color: var(--accent);">note →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 13px; color: var(--muted); text-align: center; margin: 0;">This is a standing-style gathering at an event venue. Please note that the number of spots is limited.</p>
+    </div>
+  </div>
+
+  <!-- closing CTA -->
+  <div style="background: var(--accent); padding: clamp(56px, 10vw, 112px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px;">
+    <h2 style="color: var(--accent-ink); font-size: clamp(22px, 3.6vw, 32px); line-height: 1.6;">A night where newcomers and longtime friends<br>reconnect.</h2>
+    <a href="https://www.vida-academy.jp/p/utage2026" target="_blank" rel="noopener" class="cta" style="background: var(--accent-ink); color: var(--accent); font-weight: 700; font-size: 17px; padding: 16px 44px; border-radius: 999px;">Join Now →</a>
+  </div>
+
+  <!-- footer -->
+  <div style="padding: 32px clamp(20px, 5vw, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid var(--border);">
+    <img src="../assets/logo.webp" alt="?FUK. NASHITE FUKUOKA" style="height: 22px; width: auto; display: block;">
+    <div style="font-size: 13px; color: var(--muted);">Nashite Fukuoka × Autumn Utage 2026</div>
+  </div>
+
+</div>
+
+<!-- lightbox -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button id="lightbox-close" class="lightbox-close" type="button" aria-label="Close">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  (function () {
+    var toggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('site-nav');
+    var icon = document.getElementById('nav-toggle-icon');
+    if (!toggle || !nav) return;
+    var openPath = 'M4 6h16M4 12h16M4 18h16';
+    var closePath = 'M6 6l12 12M18 6L6 18';
+    function setOpen(open) {
+      nav.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if (icon) {
+        var path = icon.querySelector('path');
+        if (path) path.setAttribute('d', open ? closePath : openPath);
+      }
+    }
+    toggle.addEventListener('click', function () {
+      setOpen(!nav.classList.contains('open'));
+    });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () { setOpen(false); });
+    });
+  })();
+
+  // draggable / flickable auto-scrolling marquees
+  var marqueeDragDistance = 0;
+  (function () {
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('[data-marquee]').forEach(function (viewport) {
+      var track = viewport.firstElementChild;
+      if (!track) return;
+      var reverse = viewport.dataset.dir === 'right';
+      var speed = parseFloat(viewport.dataset.speed || '30');
+      var dragging = false, lastTs = null, paused = false, resumeAt = 0;
+
+      function halfWidth() { return track.scrollWidth / 2; }
+
+      function wrap() {
+        var hw = halfWidth();
+        if (hw <= 0) return;
+        if (viewport.scrollLeft >= hw) viewport.scrollLeft -= hw;
+        else if (viewport.scrollLeft < 0) viewport.scrollLeft += hw;
+      }
+
+      // start reverse (right-moving) tracks mid-way so they have room to count down
+      if (reverse) viewport.scrollLeft = halfWidth();
+
+      function pauseFor(ms) { paused = true; resumeAt = performance.now() + ms; }
+
+      function tick(ts) {
+        if (!reduceMotion && !dragging) {
+          if (!paused || performance.now() > resumeAt) {
+            paused = false;
+            if (lastTs != null) {
+              var dt = Math.min(ts - lastTs, 50) / 1000;
+              viewport.scrollLeft += speed * dt * (reverse ? -1 : 1);
+              wrap();
+            }
+          }
+        }
+        lastTs = ts;
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+
+      var DRAG_THRESHOLD = 4;
+
+      viewport.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'mouse') { pauseFor(3000); return; }
+        marqueeDragDistance = 0;
+        var downX = e.clientX;
+        var downScroll = viewport.scrollLeft;
+        var isDragging = false;
+
+        function onMove(ev) {
+          var dx = ev.clientX - downX;
+          if (!isDragging && Math.abs(dx) > DRAG_THRESHOLD) {
+            isDragging = true;
+            dragging = true;
+            viewport.classList.add('dragging');
+          }
+          if (isDragging) {
+            ev.preventDefault();
+            marqueeDragDistance = Math.abs(dx);
+            viewport.scrollLeft = downScroll - dx;
+            wrap();
+          }
+        }
+        function onUp() {
+          window.removeEventListener('pointermove', onMove);
+          window.removeEventListener('pointerup', onUp);
+          window.removeEventListener('pointercancel', onUp);
+          if (isDragging) {
+            dragging = false;
+            viewport.classList.remove('dragging');
+            pauseFor(2500);
+          }
+        }
+        window.addEventListener('pointermove', onMove);
+        window.addEventListener('pointerup', onUp);
+        window.addEventListener('pointercancel', onUp);
+      });
+      viewport.addEventListener('wheel', function () { pauseFor(2000); }, { passive: true });
+      viewport.addEventListener('touchstart', function () { pauseFor(3000); }, { passive: true });
+      viewport.addEventListener('scroll', wrap);
+    });
+  })();
+
+  // lightbox for the photo gallery
+  (function () {
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var closeBtn = document.getElementById('lightbox-close');
+    if (!lightbox || !lightboxImg || !closeBtn) return;
+
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || '';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+    }
+    document.querySelectorAll('.gallery-track img').forEach(function (img) {
+      img.addEventListener('click', function () {
+        if (marqueeDragDistance > 6) { marqueeDragDistance = 0; return; }
+        openLightbox(img.currentSrc || img.src, img.alt);
+      });
+    });
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+    closeBtn.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+  })();
+</script>
+
+</body>
+</html>

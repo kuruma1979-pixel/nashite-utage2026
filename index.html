@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>秋のウタゲ2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Archivo:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --bg-soft: #F3F7F8;
+    --bg-dark: #0A0E10;
+    --text: #333333;
+    --heading: #0B0F10;
+    --accent: #377590;
+    --accent-ink: #FFFFFF;
+    --muted: #537584;
+    --border: #E7ECED;
+    --card-bg: #FFFFFF;
+    --header-bg: rgba(255,255,255,0.92);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: "Noto Sans JP", sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  h1, h2, h3 { font-family: "Noto Sans JP", sans-serif; font-weight: 900; color: var(--heading); margin: 0; text-wrap: balance; }
+  .num { font-family: "Archivo", sans-serif; font-weight: 800; }
+  .cta { display: inline-block; }
+  .cta:hover { opacity: 0.88; }
+  img { max-width: 100%; }
+
+  .nav-toggle { display: none; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; background: none; border: none; color: var(--heading); cursor: pointer; flex-shrink: 0; }
+  .site-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 20px; padding: 0 clamp(20px, 5vw, 64px) 12px; font-size: 13px; font-weight: 700; color: var(--muted); }
+
+  .lang-link { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--card-bg); color: var(--heading); font-family: "Archivo", sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.02em; flex-shrink: 0; }
+  .lang-link:hover { border-color: var(--accent); color: var(--accent); }
+
+  .mobile-cta-bar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; justify-content: center; padding: 10px 20px calc(10px + env(safe-area-inset-bottom)); background: var(--header-bg); backdrop-filter: blur(6px); border-top: 1px solid var(--border); }
+  body { padding-bottom: 68px; }
+
+  @media (max-width: 640px) {
+    .nav-toggle { display: inline-flex; }
+    .site-nav { display: none; flex-direction: column; align-items: flex-start; gap: 14px; padding: 4px clamp(20px, 5vw, 64px) 22px; }
+    .site-nav.open { display: flex; }
+    .header-cta { display: none; }
+    .mobile-cta-bar a { width: 100%; text-align: center; }
+  }
+
+  .marquee-viewport { width: 100%; overflow-x: auto; overflow-y: hidden; cursor: grab; scrollbar-width: none; -ms-overflow-style: none; }
+  .marquee-viewport::-webkit-scrollbar { display: none; }
+  .marquee-viewport.dragging { cursor: grabbing; scroll-snap-type: none; }
+  .marquee-viewport.dragging * { user-select: none; }
+
+  .gallery-track { display: flex; align-items: center; gap: 16px; width: max-content; }
+  .gallery-track img { height: 200px; width: auto; flex-shrink: 0; border-radius: 12px; display: block; cursor: zoom-in; -webkit-user-drag: none; }
+
+  .speakers-track { display: flex; align-items: flex-start; gap: 24px; width: max-content; }
+  .speakers-card { width: 280px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px; }
+  .speakers-card img { -webkit-user-drag: none; }
+
+  .lightbox { position: fixed; inset: 0; z-index: 50; display: none; align-items: center; justify-content: center; background: rgba(5,7,8,0.92); padding: 32px; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .lightbox-close { position: fixed; top: 18px; right: 18px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.14); border: none; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+  .lightbox-close:hover { background: rgba(255,255,255,0.26); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+
+<div style="width: 100%; max-width: 100%; overflow-x: hidden;">
+
+  <!-- header -->
+  <div style="position: sticky; top: 0; z-index: 10; background: var(--header-bg); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); display: flex; flex-direction: column;">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px clamp(20px, 5vw, 64px) 10px;">
+      <img src="assets/logo.webp" alt="?FUK. NASHITE FUKUOKA" style="height: 46px; width: auto; display: block;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="https://www.vida-academy.jp/p/utage2026" target="_blank" rel="noopener" class="cta header-cta" style="background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 14px; padding: 10px 20px; border-radius: 999px; white-space: nowrap;">参加申込みへ</a>
+        <a href="en/" class="lang-link">EN</a>
+        <button id="nav-toggle" class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-nav">
+          <svg id="nav-toggle-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+        </button>
+      </div>
+    </div>
+    <nav id="site-nav" class="site-nav">
+      <a href="#about">秋のウタゲとは？</a>
+      <a href="#gallery">写真で振り返るナシテフクオカ</a>
+      <a href="#people">こんな人と出会える</a>
+      <a href="#highlights">3つのお楽しみポイント</a>
+      <a href="#speakers">ピッチ登壇者紹介</a>
+      <a href="#details">イベント詳細</a>
+    </nav>
+  </div>
+
+  <!-- mobile fixed CTA bar -->
+  <div class="mobile-cta-bar">
+    <a href="https://www.vida-academy.jp/p/utage2026" target="_blank" rel="noopener" class="cta" style="background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 15px; padding: 13px 20px; border-radius: 999px;">参加申込みはこちら →</a>
+  </div>
+
+  <!-- hero / とは？ -->
+  <div id="about" style="background: var(--bg-soft); padding: clamp(24px, 4vw, 40px) clamp(20px, 5vw, 64px) clamp(48px, 8vw, 96px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px; scroll-margin-top: 110px;">
+    <img src="assets/keyvisual.jpg" alt="ナシテ福岡 秋のウタゲ 宴" style="width: 100%; max-width: 760px; height: auto; border-radius: 20px; box-shadow: 0 20px 48px rgba(0,0,0,0.16);">
+    <h1 style="font-size: clamp(28px, 5vw, 44px); line-height: 1.4;">ナシテフクオカ・秋のウタゲ2026</h1>
+    <p style="max-width: 560px; font-size: clamp(15px, 2vw, 17px); line-height: 1.9; margin: 0;">来た人と、ずっといた人が、もう一度つながり直す夜に。</p>
+    <a href="https://www.vida-academy.jp/p/utage2026" target="_blank" rel="noopener" class="cta" style="background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 17px; padding: 16px 40px; border-radius: 999px;">参加申込みはこちら →</a>
+    <div style="font-size: 14px; color: var(--muted);">📍Urbang Table（ミーナ天神・福岡中央郵便局すぐ）&nbsp;/&nbsp; 参加費 4,500円</div>
+  </div>
+
+  <div style="padding: clamp(56px, 9vw, 104px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center;">
+    <div style="max-width: 680px; display: flex; flex-direction: column; gap: 24px;">
+      <h2 style="font-size: clamp(24px, 3.4vw, 32px); text-align: center;">ナシテフクオカ・秋のウタゲ2026とは？</h2>
+      <p style="font-size: clamp(15px, 2vw, 17px); line-height: 2; margin: 0;">
+        これまでのワークショップで、すごい面白い人たちにたくさん出会ってきました。<br><br>
+        でも実は、各回ごとに出会いが分かれていて、まだお互いに会えていない人がたくさんいます。<br><br>
+        「秋のウタゲ」は、そのつながる機会をつくる日です。
+      </p>
+      <div style="border-left: 4px solid var(--accent); padding: 4px 0 4px 24px; font-size: clamp(16px, 2.2vw, 19px); font-weight: 700; line-height: 1.8; color: var(--heading);">
+        ビジネス交流会ではありません。仕事も、趣味も、遊びも、暮らしも全部ひっくるめて、「人と人」がゆっくり出会い直す場です。
+      </div>
+      <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; display: block; background: #000000;">
+        <source src="assets/highlight.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- 写真で振り返るナシテフクオカの活動 -->
+  <div id="gallery" style="background: var(--bg-dark); padding: clamp(40px, 7vw, 72px) 0; display: flex; flex-direction: column; gap: 32px; overflow: hidden; scroll-margin-top: 110px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 0 20px;">
+      <h2 style="color: #FFFFFF; font-size: clamp(20px, 3vw, 26px); text-align: center;">写真で振り返るナシテフクオカ</h2>
+      <p style="margin: 0; color: rgba(255,255,255,0.72); font-size: 13px; text-align: center;">これまで8回以上のイベントを開催してきました。</p>
+    </div>
+    <div class="marquee-viewport" data-marquee data-dir="right" data-speed="38">
+      <div class="gallery-track right">
+        <img src="assets/gallery-01.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-02.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-03.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-04.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-05.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-06.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-07.png" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-01.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-02.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-03.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-04.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-05.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-06.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-07.png" alt="ナシテフクオカの活動写真">
+      </div>
+    </div>
+    <div class="marquee-viewport" data-marquee data-dir="left" data-speed="34">
+      <div class="gallery-track">
+        <img src="assets/gallery-08.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-09.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-10.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-11.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-12.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-08.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-09.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-10.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-11.jpg" alt="ナシテフクオカの活動写真">
+        <img src="assets/gallery-12.jpg" alt="ナシテフクオカの活動写真">
+      </div>
+    </div>
+  </div>
+
+  <!-- こんな人と出会えます -->
+  <div id="people" style="background: var(--bg-soft); padding: clamp(56px, 9vw, 104px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; scroll-margin-top: 110px;">
+    <div style="max-width: 880px; width: 100%; display: flex; flex-direction: column; gap: 36px; align-items: center;">
+      <h2 style="font-size: clamp(24px, 3.4vw, 32px); text-align: center;">こんな人と、出会えます</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+        <span style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 700;">海外を拠点にする人</span>
+        <span style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 700;">ノマド</span>
+        <span style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 700;">フリーランス</span>
+        <span style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 700;">経営者</span>
+        <span style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 700;">研究者</span>
+        <span style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 700;">クリエイター</span>
+        <span style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 700;">福岡でずっと暮らしてきた人</span>
+      </div>
+      <p style="max-width: 600px; text-align: center; font-size: 15px; line-height: 1.9; margin: 0;">普段の生活の中では、なかなか出会えない人たちが、このウタゲには集まります。<br>その出会いが、新しい視点やチャレンジが生まれるきっかけになる…。</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; width: 100%;">
+        <blockquote style="flex: 1 1 240px; min-width: 0; margin: 0; background: var(--card-bg); border-radius: 16px; padding: 24px; display: flex; align-items: flex-start; gap: 12px;">
+          <span style="width: 36px; height: 36px; border-radius: 50%; background: rgba(95,163,194,0.16); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"></circle><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          </span>
+          <span style="font-size: 15px; line-height: 1.8; color: var(--heading); font-weight: 700;">「ワークショップを通じて<br>気の合う仲間ができた」</span>
+        </blockquote>
+        <blockquote style="flex: 1 1 240px; min-width: 0; margin: 0; background: var(--card-bg); border-radius: 16px; padding: 24px; display: flex; align-items: flex-start; gap: 12px;">
+          <span style="width: 36px; height: 36px; border-radius: 50%; background: rgba(95,163,194,0.16); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"></circle><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          </span>
+          <span style="font-size: 15px; line-height: 1.8; color: var(--heading); font-weight: 700;">「価値観が少し変化し、<br>新しいチャレンジをしたくなった」</span>
+        </blockquote>
+        <blockquote style="flex: 1 1 240px; min-width: 0; margin: 0; background: var(--card-bg); border-radius: 16px; padding: 24px; display: flex; align-items: flex-start; gap: 12px;">
+          <span style="width: 36px; height: 36px; border-radius: 50%; background: rgba(95,163,194,0.16); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"></circle><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          </span>
+          <span style="font-size: 15px; line-height: 1.8; color: var(--heading); font-weight: 700;">「新しい活動の<br>きっかけが生まれた」</span>
+        </blockquote>
+      </div>
+      <div style="font-size: 12px; color: var(--muted);">— これまでの参加者からこんな声が寄せられました</div>
+    </div>
+  </div>
+
+  <!-- 初めましてでも大丈夫な理由 -->
+  <div id="assurance" style="padding: clamp(56px, 9vw, 104px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; scroll-margin-top: 110px;">
+    <div style="max-width: 680px; display: flex; flex-direction: column; gap: 24px;">
+      <h2 style="font-size: clamp(24px, 3.4vw, 32px); text-align: center;">初めましてでも、大丈夫な理由</h2>
+      <p style="font-size: clamp(15px, 2vw, 17px); line-height: 2; margin: 0; text-align: center;">「知らない人ばかりの場は、ちょっと不安…」<br>そう思う方にこそ、知っておいてほしいことがあります。</p>
+      <div style="background: var(--bg-soft); border-radius: 20px; padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; gap: 16px;">
+        <p style="margin: 0; font-size: 16px; font-weight: 700; color: var(--heading);">当日は、主催メンバーが"仲人役"として会場を回ります。</p>
+        <div style="display: flex; gap: 12px;">
+          <img src="assets/core-01.webp" alt="コアメンバー" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; display: block;">
+          <img src="assets/core-02.webp" alt="コアメンバー" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; display: block;">
+          <img src="assets/core-03.webp" alt="コアメンバー" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; display: block;">
+        </div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.9;">「○○好きなんですね、あちらにも○○好きな方いますよ」<br>「その話なら、あの人と話すと絶対面白いです」</p>
+        <p style="margin: 0; font-size: 16px; font-weight: 700; color: var(--accent);">一人でぽつん、を放っておかない。それがナシテフクオカの流儀です。</p>
+      </div>
+      <p style="font-size: 15px; line-height: 1.9; margin: 0; text-align: center;">名札にはちょっとした工夫も。名前だけでなく、好きなこと・今ハマっていること・気になっていることが一言添えられます。会話のきっかけに困ることは、たぶんありません。</p>
+    </div>
+  </div>
+
+  <!-- 当日のお楽しみ -->
+  <div id="highlights" style="background: var(--bg-soft); padding: clamp(56px, 9vw, 104px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; scroll-margin-top: 110px;">
+    <div style="max-width: 960px; width: 100%; display: flex; flex-direction: column; gap: 40px; align-items: center;">
+      <h2 style="font-size: clamp(24px, 3.4vw, 32px); text-align: center;">3つのお楽しみポイント</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; width: 100%;">
+
+        <div style="flex: 1 1 260px; min-width: 0; background: var(--card-bg); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;">
+          <img src="assets/highlight-01.jpg" alt="マイクピッチ" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
+          <div style="padding: 24px 28px 32px; display: flex; flex-direction: column; gap: 14px;">
+            <div class="num" style="font-size: 32px; color: var(--accent);">01</div>
+            <h3 style="font-size: 19px;">マイクピッチ</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.85;">一人3分間。自己紹介はもちろん、今やっていること、本当にやりたいこと——自由に話してもらう時間です。立候補も歓迎。</p>
+          </div>
+        </div>
+
+        <div style="flex: 1 1 260px; min-width: 0; background: var(--card-bg); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;">
+          <img src="assets/highlight-02.jpg" alt="多国籍料理" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
+          <div style="padding: 24px 28px 32px; display: flex; flex-direction: column; gap: 14px;">
+            <div class="num" style="font-size: 32px; color: var(--accent);">02</div>
+            <h3 style="font-size: 19px;">多国籍料理</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.85;">ノマドとして世界を渡り歩いてきた料理好きなメンバーが、いろんな国の料理を再現。福岡のお店では出会えないメニューも登場するかも。</p>
+          </div>
+        </div>
+
+        <div style="flex: 1 1 260px; min-width: 0; background: var(--card-bg); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;">
+          <img src="assets/highlight-03.jpg" alt="初めましてでも楽しめる仕掛け" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
+          <div style="padding: 24px 28px 32px; display: flex; flex-direction: column; gap: 14px;">
+            <div class="num" style="font-size: 32px; color: var(--accent);">03</div>
+            <h3 style="font-size: 19px;">初めましてでも楽しめる仕掛け</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.85;">ミニゲームやクイズで、初めましての人同士でも自然に打ち解けられます。知り合い同士だけで固まらないよう、グループを混ぜる時間も。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- マイクピッチ登壇者 -->
+  <div id="speakers" style="padding: clamp(56px, 9vw, 104px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; scroll-margin-top: 110px;">
+    <div style="max-width: 960px; width: 100%; display: flex; flex-direction: column; gap: 40px; align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+        <h2 style="font-size: clamp(24px, 3.4vw, 32px); text-align: center;">マイクピッチ登壇者</h2>
+        <p style="margin: 0; font-size: 15px; line-height: 1.9; text-align: center; max-width: 520px;">当日3分間、本音を語ってくれる登壇者をご紹介。</p>
+      </div>
+      <div class="marquee-viewport" data-marquee data-dir="left" data-speed="30">
+        <div class="speakers-track">
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="assets/speaker-higuchi.jpg" alt="樋口拓哉" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">樋口 拓哉</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">セラピスト×トレーナーが考える『日本の健康・フィットネス』の可能性</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="assets/speaker-ryuji.jpg" alt="りゅうじ" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">りゅうじ</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">AI×解剖学ピラティス</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="assets/speaker-bambi.jpg" alt="BAMBI" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">BAMBI</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">福岡を約10年間発信してきた映像ディレクターが語る「人は景色ではなく、物語に動かされる」</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="assets/speaker-kuruma.jpg" alt="くるま" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">くるま</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">外から日本の魅力を見てきたマーケターが考える「海外インバウンド集客」</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 48px; color: var(--accent); opacity: 0.5;">?</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="font-weight: 700; font-size: 16px; color: var(--heading);">？？？</div>
+              <div style="font-size: 13px; line-height: 1.7;">近日公開、お楽しみに！</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 48px; color: var(--accent); opacity: 0.5;">?</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="font-weight: 700; font-size: 16px; color: var(--heading);">？？？</div>
+              <div style="font-size: 13px; line-height: 1.7;">近日公開、お楽しみに！</div>
+            </div>
+          </div>
+
+          <!-- duplicate set for seamless loop -->
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="assets/speaker-higuchi.jpg" alt="樋口拓哉" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">樋口 拓哉</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">セラピスト×トレーナーが考える『日本の健康・フィットネス』の可能性</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="assets/speaker-ryuji.jpg" alt="りゅうじ" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">りゅうじ</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">AI×解剖学ピラティス</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="assets/speaker-bambi.jpg" alt="BAMBI" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">BAMBI</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">福岡を約10年間発信してきた映像ディレクターが語る「人は景色ではなく、物語に動かされる」</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="assets/speaker-kuruma.jpg" alt="くるま" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="font-weight: 700; font-size: 11px; letter-spacing: 0.04em; color: var(--muted);">くるま</div>
+              <div style="font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--heading);">外から日本の魅力を見てきたマーケターが考える「海外インバウンド集客」</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 48px; color: var(--accent); opacity: 0.5;">?</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="font-weight: 700; font-size: 16px; color: var(--heading);">？？？</div>
+              <div style="font-size: 13px; line-height: 1.7;">近日公開、お楽しみに！</div>
+            </div>
+          </div>
+
+          <div class="speakers-card">
+            <div style="width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--bg-soft); border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 48px; color: var(--accent); opacity: 0.5;">?</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="font-weight: 700; font-size: 16px; color: var(--heading);">？？？</div>
+              <div style="font-size: 13px; line-height: 1.7;">近日公開、お楽しみに！</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 詳細 -->
+  <div id="details" style="padding: clamp(56px, 9vw, 104px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; scroll-margin-top: 110px;">
+    <div style="max-width: 680px; width: 100%; display: flex; flex-direction: column; gap: 32px;">
+      <h2 style="font-size: clamp(24px, 3.4vw, 32px); text-align: center;">イベント詳細情報</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border);">
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 20px 0; border-bottom: 1px solid var(--border);">
+          <div style="width: 96px; flex-shrink: 0; font-weight: 700; color: var(--muted); font-size: 14px;">日時</div>
+          <div style="flex: 1 1 260px; font-size: 15px; color: var(--heading);">2026年10月17日（土）17:00–20:00</div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 20px 0; border-bottom: 1px solid var(--border);">
+          <div style="width: 96px; flex-shrink: 0; font-weight: 700; color: var(--muted); font-size: 14px;">場所</div>
+          <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="font-size: 15px; color: var(--heading);">Urbang Table（ミーナ天神・福岡中央郵便局すぐ）<br><a href="https://maps.app.goo.gl/fUZd4rp75DmWXwo6A" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700; font-size: 14px;">地図を見る →</a></div>
+            <a href="https://maps.app.goo.gl/fUZd4rp75DmWXwo6A" target="_blank" rel="noopener" style="display: block; border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
+              <img src="assets/venue-map.png" alt="Urbang Table 地図" style="width: 100%; height: auto; display: block;">
+            </a>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 20px 0; border-bottom: 1px solid var(--border);">
+          <div style="width: 96px; flex-shrink: 0; font-weight: 700; color: var(--muted); font-size: 14px;">参加費</div>
+          <div style="flex: 1 1 260px; font-size: 15px; color: var(--heading);">4,500円（多国籍料理＋2ドリンク　*アルコールあり）</div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 20px 0; border-bottom: 1px solid var(--border);">
+          <div style="width: 96px; flex-shrink: 0; font-weight: 700; color: var(--muted); font-size: 14px;">English</div>
+          <div style="flex: 1 1 260px; font-size: 15px; color: var(--heading); line-height: 1.8;">英語話者の方も参加できます。リアルタイムAI翻訳（QRコード読み取り）、日英バイリンガルスタッフのサポートがあります。</div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 20px 0; border-bottom: 1px solid var(--border);">
+          <div style="width: 96px; flex-shrink: 0; font-weight: 700; color: var(--muted); font-size: 14px;">主催</div>
+          <div style="flex: 1 1 260px; font-size: 15px; color: var(--heading); line-height: 1.8;">
+            ナシテフクオカ<br>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 10px; font-size: 13px; font-weight: 700;">
+              <a href="https://nashitefukuoka.jp/" target="_blank" rel="noopener" style="color: var(--accent);">公式HP →</a>
+              <a href="https://www.instagram.com/nashite_fukuoka/" target="_blank" rel="noopener" style="color: var(--accent);">Instagram →</a>
+              <a href="https://www.threads.com/@nashite_fukuoka" target="_blank" rel="noopener" style="color: var(--accent);">Threads →</a>
+              <a href="https://www.youtube.com/@NASHITEFUKUOKA" target="_blank" rel="noopener" style="color: var(--accent);">YouTube →</a>
+              <a href="https://note.com/nashite_fukuoka" target="_blank" rel="noopener" style="color: var(--accent);">note →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 13px; color: var(--muted); text-align: center; margin: 0;">基本、立食のイベント会場での集まりです。参加人数が限られているのは、あらかじめご容赦くださいませ。</p>
+    </div>
+  </div>
+
+  <!-- closing CTA -->
+  <div style="background: var(--accent); padding: clamp(56px, 10vw, 112px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px;">
+    <h2 style="color: var(--accent-ink); font-size: clamp(22px, 3.6vw, 32px); line-height: 1.6;">来た人と、ずっといた人が、<br>もう一度つながり直す夜に。</h2>
+    <a href="https://www.vida-academy.jp/p/utage2026" target="_blank" rel="noopener" class="cta" style="background: var(--accent-ink); color: var(--accent); font-weight: 700; font-size: 17px; padding: 16px 44px; border-radius: 999px;">参加申込みはこちら →</a>
+  </div>
+
+  <!-- footer -->
+  <div style="padding: 32px clamp(20px, 5vw, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid var(--border);">
+    <img src="assets/logo.webp" alt="?FUK. NASHITE FUKUOKA" style="height: 22px; width: auto; display: block;">
+    <div style="font-size: 13px; color: var(--muted);">ナシテ福岡 × 秋のウタゲ2026</div>
+  </div>
+
+</div>
+
+<!-- lightbox -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button id="lightbox-close" class="lightbox-close" type="button" aria-label="閉じる">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  (function () {
+    var toggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('site-nav');
+    var icon = document.getElementById('nav-toggle-icon');
+    if (!toggle || !nav) return;
+    var openPath = 'M4 6h16M4 12h16M4 18h16';
+    var closePath = 'M6 6l12 12M18 6L6 18';
+    function setOpen(open) {
+      nav.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+      if (icon) {
+        var path = icon.querySelector('path');
+        if (path) path.setAttribute('d', open ? closePath : openPath);
+      }
+    }
+    toggle.addEventListener('click', function () {
+      setOpen(!nav.classList.contains('open'));
+    });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () { setOpen(false); });
+    });
+  })();
+
+  // draggable / flickable auto-scrolling marquees
+  var marqueeDragDistance = 0;
+  (function () {
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('[data-marquee]').forEach(function (viewport) {
+      var track = viewport.firstElementChild;
+      if (!track) return;
+      var reverse = viewport.dataset.dir === 'right';
+      var speed = parseFloat(viewport.dataset.speed || '30');
+      var dragging = false, lastTs = null, paused = false, resumeAt = 0;
+
+      function halfWidth() { return track.scrollWidth / 2; }
+
+      function wrap() {
+        var hw = halfWidth();
+        if (hw <= 0) return;
+        if (viewport.scrollLeft >= hw) viewport.scrollLeft -= hw;
+        else if (viewport.scrollLeft < 0) viewport.scrollLeft += hw;
+      }
+
+      // start reverse (right-moving) tracks mid-way so they have room to count down
+      if (reverse) viewport.scrollLeft = halfWidth();
+
+      function pauseFor(ms) { paused = true; resumeAt = performance.now() + ms; }
+
+      function tick(ts) {
+        if (!reduceMotion && !dragging) {
+          if (!paused || performance.now() > resumeAt) {
+            paused = false;
+            if (lastTs != null) {
+              var dt = Math.min(ts - lastTs, 50) / 1000;
+              viewport.scrollLeft += speed * dt * (reverse ? -1 : 1);
+              wrap();
+            }
+          }
+        }
+        lastTs = ts;
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+
+      var DRAG_THRESHOLD = 4;
+
+      viewport.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'mouse') { pauseFor(3000); return; }
+        marqueeDragDistance = 0;
+        var downX = e.clientX;
+        var downScroll = viewport.scrollLeft;
+        var isDragging = false;
+
+        function onMove(ev) {
+          var dx = ev.clientX - downX;
+          if (!isDragging && Math.abs(dx) > DRAG_THRESHOLD) {
+            isDragging = true;
+            dragging = true;
+            viewport.classList.add('dragging');
+          }
+          if (isDragging) {
+            ev.preventDefault();
+            marqueeDragDistance = Math.abs(dx);
+            viewport.scrollLeft = downScroll - dx;
+            wrap();
+          }
+        }
+        function onUp() {
+          window.removeEventListener('pointermove', onMove);
+          window.removeEventListener('pointerup', onUp);
+          window.removeEventListener('pointercancel', onUp);
+          if (isDragging) {
+            dragging = false;
+            viewport.classList.remove('dragging');
+            pauseFor(2500);
+          }
+        }
+        window.addEventListener('pointermove', onMove);
+        window.addEventListener('pointerup', onUp);
+        window.addEventListener('pointercancel', onUp);
+      });
+      viewport.addEventListener('wheel', function () { pauseFor(2000); }, { passive: true });
+      viewport.addEventListener('touchstart', function () { pauseFor(3000); }, { passive: true });
+      viewport.addEventListener('scroll', wrap);
+    });
+  })();
+
+  // lightbox for the photo gallery
+  (function () {
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var closeBtn = document.getElementById('lightbox-close');
+    if (!lightbox || !lightboxImg || !closeBtn) return;
+
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || '';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+    }
+    document.querySelectorAll('.gallery-track img').forEach(function (img) {
+      img.addEventListener('click', function () {
+        if (marqueeDragDistance > 6) { marqueeDragDistance = 0; return; }
+        openLightbox(img.currentSrc || img.src, img.alt);
+      });
+    });
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+    closeBtn.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+  })();
+</script>
+
+</body>
+</html>
